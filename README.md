@@ -1,5 +1,5 @@
 # Doc-script
-Salvamento da estrutura de documentação do script pipeline de automação de login de um roteador, por meio de backup e acesso via SSH.
+Esboço da estrutura de documentação do script pipeline de automação de login de um roteador.
 
 # Avaliação
 07 de agosto de 2023
@@ -15,7 +15,7 @@ O script pipeline escolhido realiza a automação do login de acesso de um rotea
 Aqui está o script completo
 
 ```
-xxxx
+insira o script completo
 ```
 
 ### Compreendendo o script
@@ -25,15 +25,25 @@ O script é dividido em x stages:
 1. Configuração do ambiente
    
    ```
-   xxxx
+   insira o primeiro stage do script
    ```
 2. Backup de configuração do roteador
    
    ```
-   xxxx
+   insira o segundo stage do script
    ```
 3. Notificação
    
    ```
-   xxxx
+   insira o terceiro stage do script
    ```
+
+## Capturas de tela
+
+Registro da construção e execução do Job no Jenkins.
+
+1. Descreva a imagem
+![](fakeimg.png)
+
+2. Descreva a imagem
+![](fakeimg.png)
