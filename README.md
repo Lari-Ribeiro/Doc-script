@@ -15,12 +15,54 @@ O script pipeline escolhido realiza a automação do login de acesso de um rotea
 Aqui está o script completo
 
 ```
-insira o script completo
+pipeline {
+    agent any
+    
+    stages {
+        stage('Test Network') {
+            steps {
+                bat 'ipconfig /all > rede.txt'
+                bat 'copy rede.txt C:\\seucaminho'
+            }
+        }
+        
+        stage('Release IP') {
+            steps {
+                bat 'ipconfig /release'
+            }
+        }
+        
+        stage('Renew IP') {
+            steps {
+                bat 'ipconfig /renew'
+            }
+        }
+        
+        stage('Flush DNS Cache') {
+            steps {
+                bat 'ipconfig /flushdns'
+            }
+        }
+    }
+    
+    post {
+        success {
+            emailext to: "seuemail@gexample.com",
+            subject: "Teste de Pipeline - Sucesso",
+            body: "O pipeline foi executado com sucesso! Todas as etapas foram concluídas sem erros."
+        }
+        failure {
+            emailext to: "seuemail@gexample.com",
+            subject: "Teste de Pipeline - Falha",
+            body: "O pipeline falhou! Alguma etapa não foi concluída corretamente. Verifique o log para mais detalhes."
+        }
+    }
+}
 ```
 
 ### Compreendendo o script
 
-O script é dividido em x stages:
+O script é dividido em 4 stages:
 
 1. Configuração do ambiente
    
@@ -37,6 +79,7 @@ O script é dividido em x stages:
    ```
    insira o terceiro stage do script
    ```
+
 
 ## Capturas de tela
 
